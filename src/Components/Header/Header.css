@@ -53,6 +53,7 @@
 .backward-menu {
   display: flex;
   align-items: center;
+  font-family: "Raleway", "Open Sans", serif;
   margin-top: 20px;
   margin-left: 250px;
   color: #d8d8d8;
@@ -88,9 +89,10 @@
   margin-left: 240px;
   display: flex;
   justify-content: space-evenly;
-  font-size: 14px;
+  font-size: 16px;
   align-items: center;
   gap: 16px;
+  color: #312522;
 }
 
 .custom-tab {
