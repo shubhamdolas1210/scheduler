@@ -45,10 +45,16 @@ const Sidebar = () => {
 
   return (
     <div>
-      <IconButton onClick={toggleDrawer} edge="start" color="inherit">
-        <MenuIcon sx={{ color: "#312522", marginLeft: "20px" }} />
-      </IconButton>
-
+      <MenuIcon
+        onClick={toggleDrawer}
+        sx={{
+          color: "#312522",
+          marginLeft: "20px",
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
+        }}
+      />
       <Drawer
         anchor="left"
         open={isOpen}
