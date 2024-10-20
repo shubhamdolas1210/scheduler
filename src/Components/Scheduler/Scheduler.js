@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Paper,
   Typography,
@@ -11,6 +11,10 @@ import {
   List,
   ListItem,
   ListItemText,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
 } from "@mui/material";
 import { Share } from "@mui/icons-material";
 import { Chip } from "@mui/material";
@@ -29,6 +33,7 @@ import {
   Agenda,
   Inject,
 } from "@syncfusion/ej2-react-schedule";
+import Popupbox from "../Popupbox/Popupbox";
 
 const CalendarPage = () => {
   const activities = [
@@ -56,6 +61,16 @@ const CalendarPage = () => {
     Study: { backgroundColor: "##EAFFDC", color: "#212121" },
     Practice: { backgroundColor: "#E2DBC1", color: "#212121" },
     Other: { backgroundColor: "#B3B1B7", color: "#212121" },
+  };
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
@@ -205,6 +220,7 @@ const CalendarPage = () => {
             height: "40px",
             fontFamily: `"Raleway","Open Sans", sans-serif`,
           }}
+          onClick={handleOpen}
         >
           <img
             src="./assets/plus.png"
@@ -213,6 +229,16 @@ const CalendarPage = () => {
           />
           Schedule session
         </Button>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          PaperProps={{
+            sx: { borderRadius: "30px", marginTop: "100px" },
+          }}
+          onClick={handleClose}
+        >
+          <Popupbox />
+        </Dialog>
       </Box>
 
       {/* Main Content Section */}
