@@ -12,9 +12,6 @@ import {
   ListItem,
   ListItemText,
   Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
 } from "@mui/material";
 import { Share } from "@mui/icons-material";
 import { Chip } from "@mui/material";
@@ -242,8 +239,17 @@ const CalendarPage = () => {
       </Box>
 
       {/* Main Content Section */}
-      <Box display="flex" gap={1} sx={{ height: "calc(100% - 60px)" }}>
-        {/* Calendar Section */}
+      <Box
+        display="flex"
+        sx={{
+          flexDirection: { xs: "column", sm: "row" }, // Stack vertically on mobile
+          gap: 1,
+          height: "calc(100% - 60px)",
+          "@media (max-width: 800px)": {
+            flexDirection: "column", // Force vertical stacking below 800px
+          },
+        }}
+      >
         <Box
           flex={2}
           sx={{ borderRight: "1px solid #e0e0e0", paddingRight: 1 }}
