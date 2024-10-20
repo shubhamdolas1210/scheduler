@@ -62,14 +62,20 @@ const Sidebar = () => {
         sx={{
           "& .MuiDrawer-paper": {
             backgroundColor: "#FFFFFF",
-            width: "250px",
+            width: "240px",
             borderRadius: "0px 30px 30px 0px",
           },
         }}
       >
         <ThemeProvider theme={theme}>
           <List>
-            <ListItem>
+            <ListItem
+              sx={{
+                backgroundColor: "#f6f6f6", // Background color
+                marginBottom: "10px", // Margin bottom
+                borderRadius: "15px", // Border radius
+              }}
+            >
               <ListItemIcon sx={{ minWidth: "35px" }}>
                 <img src="./assets/homelogo.png" alt="homelogo" />
               </ListItemIcon>
