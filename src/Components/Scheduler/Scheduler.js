@@ -7,17 +7,28 @@ import {
   ToggleButtonGroup,
   Box,
   Switch,
+  Divider,
   List,
   ListItem,
   ListItemText,
 } from "@mui/material";
-import { CalendarToday, Share } from "@mui/icons-material";
+import { Share } from "@mui/icons-material";
 import { Chip } from "@mui/material";
 import "./Scheduler.css";
 
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+
+import {
+  ScheduleComponent,
+  Day,
+  Week,
+  WorkWeek,
+  Month,
+  Agenda,
+  Inject,
+} from "@syncfusion/ej2-react-schedule";
 
 const CalendarPage = () => {
   const activities = [
@@ -60,52 +71,49 @@ const CalendarPage = () => {
     >
       {/* Header Section */}
       <Box
-        width="65%"
+        width="100%"
         display="flex"
         justifyContent="space-between"
         alignItems="center"
         mb={2}
       >
+        {/* Left side: Calendar Typography */}
+        <Typography
+          variant="h6"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            color: "#3B3E45",
+            fontWeight: "700",
+            fontSize: "24px",
+            fontFamily: `"Open Sans", sans-serif`,
+            borderBottom: "1px solid #A8A8A8",
+          }}
+        >
+          Calendar
+        </Typography>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
+            ml: "auto",
           }}
         >
-          <Typography
-            variant="h6"
-            sx={{
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              color: "#3B3E45",
-              fontWeight: "700",
-              fontSize: "24px",
-              fontFamily: `"Open Sans", sans-serif`,
-              borderBottom: "1px solid #A8A8A8",
-            }}
-          >
-            Calendar
-          </Typography>
           <img
             src="./assets/lock.png"
             alt="lock-logo"
-            style={{ marginLeft: "10px" }}
+            style={{ marginRight: "10px" }}
           />
           <Typography
             variant="h6"
             sx={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              alignItems: "center",
               color: "#312522",
-
               fontSize: "16px",
-              fontFamily: ` "Raleway","Open Sans", sans-serif`,
+              fontFamily: `"Raleway", "Open Sans", sans-serif`,
+              marginRight: "10px",
             }}
           >
-            Google Calender
+            Google Calendar
           </Typography>
           <Switch
             sx={{
@@ -122,7 +130,6 @@ const CalendarPage = () => {
               "&.Mui-checked .MuiSwitch-track": {
                 backgroundColor: "#312522",
               },
-
               "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
                 backgroundColor: "#312522",
               },
@@ -130,12 +137,60 @@ const CalendarPage = () => {
           />
         </Box>
       </Box>
+      <Divider
+        sx={{ borderBottomWidth: 1, backgroundColor: "#A8A8A8", my: 2 }}
+      />
       <Box>
-        <Button variant="outlined" startIcon={<CalendarToday />}>
-          May 27, 2022 Today
+        <Button
+          sx={{ width: "10px", height: "45px", border: "2px solid #DCDFE3" }}
+        >
+          <img src="./assets/left-arrow.png" alt="l-arrow" />
         </Button>
-        <ToggleButtonGroup value="day" exclusive aria-label="calendar view">
-          <ToggleButton value="day">Day</ToggleButton>
+        <Button
+          sx={{
+            color: "#3B3E45",
+            fontSize: "16px",
+            fontFamily: `"Open Sans", sans-serif`,
+            textTransform: "none",
+            fontWeight: "600",
+          }}
+        >
+          Oct 21, 2024 &nbsp;
+          <Box
+            component="span"
+            sx={{
+              color: "#666E7D",
+              fontWeight: "400",
+            }}
+          >
+            Today
+          </Box>
+        </Button>
+        <Button
+          sx={{ width: "10px", height: "45px", border: "2px solid #DCDFE3" }}
+        >
+          <img src="./assets/right-arrow.png" alt="r-arrow" />
+        </Button>
+
+        <ToggleButtonGroup
+          value="day"
+          exclusive
+          aria-label="calendar view"
+          sx={{ marginRight: "180px", marginBottom: "10px" }}
+        >
+          <ToggleButton
+            value="day"
+            sx={{
+              "&.Mui-selected": {
+                fontFamily: '"Open Sans", sans-serif',
+                color: "#fffaef",
+                backgroundColor: "#f1b942",
+                marginLeft: "150px",
+              },
+            }}
+          >
+            Day
+          </ToggleButton>
           <ToggleButton value="week">Week</ToggleButton>
           <ToggleButton value="month">Month</ToggleButton>
         </ToggleButtonGroup>
@@ -159,22 +214,24 @@ const CalendarPage = () => {
           Schedule session
         </Button>
       </Box>
+
       {/* Main Content Section */}
-      <Box display="flex" gap={2} sx={{ height: "calc(100% - 60px)" }}>
+      <Box display="flex" gap={1} sx={{ height: "calc(100% - 60px)" }}>
         {/* Calendar Section */}
         <Box
           flex={2}
-          sx={{ borderRight: "1px solid #e0e0e0", paddingRight: 2 }}
+          sx={{ borderRight: "1px solid #e0e0e0", paddingRight: 1 }}
         >
-          <Typography variant="body2" align="center" sx={{ paddingTop: 10 }}>
-            Calendar Events Placeholder
-          </Typography>
+          <ScheduleComponent style={{ fontFamily: "Open Sans, sans-serif" }}>
+            <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+          </ScheduleComponent>
+          ;
         </Box>
 
         <Box
           flex={1}
           sx={{
-            paddingLeft: 2,
+            paddingLeft: 1,
             "& .MuiTypography-root.MuiDayCalendar-weekDayLabel": {
               fontFamily: '"Open Sans", sans-serif',
               color: "#000000",

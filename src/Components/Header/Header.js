@@ -58,7 +58,6 @@ const Header = function () {
         <div className="custom-tab">Rehearsal</div>
         <div className="custom-tab">Perform</div>
       </div>
-      
     </div>
   );
 };

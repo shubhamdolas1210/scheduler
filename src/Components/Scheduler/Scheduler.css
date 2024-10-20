@@ -9,5 +9,19 @@
   color: #000000;
 }
 .css-17f9e7e-MuiTypography-root-MuiDayCalendar-weekDayLabel {
+  font-family: "Open Sans", sans-serif;
   color: #000000;
+}
+.css-1qb8o-MuiToggleButtonGroup-root .MuiToggleButtonGroup-middleButton {
+  font-family: "Open Sans", sans-serif;
+  color: #3b3e45;
+  background-color: #f3f4f6;
+}
+.css-1qb8o-MuiToggleButtonGroup-root .MuiToggleButtonGroup-lastButton {
+  font-family: "Open Sans", sans-serif;
+  color: #3b3e45;
+  background-color: #f3f4f6;
+}
+.e-schedule .e-schedule-toolbar .e-tbar-btn .e-tbar-btn-text {
+  font-family: "Open Sans", sans-serif;
 }
