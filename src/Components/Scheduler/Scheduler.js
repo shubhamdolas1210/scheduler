@@ -188,7 +188,15 @@ const CalendarPage = () => {
           value="day"
           exclusive
           aria-label="calendar view"
-          sx={{ marginRight: "180px", marginBottom: "10px" }}
+          sx={{
+            marginRight: "180px",
+            marginBottom: "10px",
+            justifyContent: "flex-start",
+
+            justifyContent: { xs: "center", sm: "space-around" },
+            flexBasis: { xs: "100%", sm: "auto" },
+            flexGrow: 2,
+          }}
         >
           <ToggleButton
             value="day"
@@ -199,6 +207,8 @@ const CalendarPage = () => {
                 backgroundColor: "#f1b942",
                 marginLeft: "150px",
               },
+              fontSize: { xs: "14px", sm: "16px" },
+              marginLeft: { xs: "20px" },
             }}
           >
             Day
@@ -209,6 +219,8 @@ const CalendarPage = () => {
         <Button
           variant="contained"
           sx={{
+            fontSize: { xs: "12px", sm: "14px" },
+            width: { xs: "100%", sm: "190px" },
             backgroundColor: "#F1B942",
             borderRadius: "30px",
             textTransform: "none",
@@ -216,6 +228,9 @@ const CalendarPage = () => {
             width: "190px",
             height: "40px",
             fontFamily: `"Raleway","Open Sans", sans-serif`,
+            flexBasis: { xs: "100%", sm: "auto" },
+            flexGrow: 1,
+            marginTop: { xs: "10px", sm: "0" },
           }}
           onClick={handleOpen}
         >
@@ -245,7 +260,7 @@ const CalendarPage = () => {
           flexDirection: { xs: "column", sm: "row" }, // Stack vertically on mobile
           gap: 1,
           height: "calc(100% - 60px)",
-          "@media (max-width: 800px)": {
+          "@media (max-width: 900px)": {
             flexDirection: "column", // Force vertical stacking below 800px
           },
         }}

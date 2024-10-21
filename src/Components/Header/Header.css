@@ -108,3 +108,23 @@
 .custom-tab:hover {
   background-color: var(--css-primary);
 }
+@media (max-width: 700px) {
+  .navbar-container {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .search-container {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .navbar-right {
+    display: none; /* Hide elements like Pro, Premium, and Get App button */
+  }
+
+  .backward-menu,
+  .tabs-section {
+    display: none; /* Hide the back menu and tabs */
+  }
+}
