@@ -54,7 +54,7 @@
   display: flex;
   align-items: center;
   font-family: "Raleway", "Open Sans", serif;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 250px;
   color: #d8d8d8;
 }
@@ -68,7 +68,7 @@
   font-weight: 600;
   color: var(--css-white);
   position: absolute;
-  top: 110px;
+  top: 140px;
   right: 46px;
   background-color: #242c32;
 
@@ -80,12 +80,13 @@
   border-radius: 8px;
   border: none;
   padding: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .tabs-section {
   width: 500px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-left: 240px;
   display: flex;
   justify-content: space-evenly;

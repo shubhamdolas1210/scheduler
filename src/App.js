@@ -6,9 +6,13 @@ import Footer from "./Components/Footer/footer";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Sidebar />
-      <CalendarPage />
+      <div className="layout-container">
+        <Sidebar />
+        <div className="content-container">
+          <Header />
+          <CalendarPage />
+        </div>
+      </div>
       <Footer />
     </div>
   );

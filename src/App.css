@@ -1,0 +1,15 @@
+.layout-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #ffffff;
+}
+
+.content-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}

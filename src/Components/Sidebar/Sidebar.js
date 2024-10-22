@@ -7,7 +7,6 @@ import {
   ListItemIcon,
   ListItemText,
   Collapse,
-  IconButton,
   Divider,
 } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -48,8 +47,9 @@ const Sidebar = () => {
       <MenuIcon
         onClick={toggleDrawer}
         sx={{
+          // marginTop: "100px",
           color: "#312522",
-          marginLeft: "20px",
+          // marginLeft: "20px",
           "&:hover": {
             backgroundColor: "transparent",
           },
@@ -57,11 +57,12 @@ const Sidebar = () => {
       />
       <Drawer
         anchor="left"
-        open={isOpen}
-        onClose={toggleDrawer}
+        open={true}
+        variant="persistent"
         sx={{
           "& .MuiDrawer-paper": {
-            backgroundColor: "#FFFFFF",
+            backgroundColor: "#FFFFF",
+
             width: "240px",
             borderRadius: "0px 30px 30px 0px",
           },
@@ -71,9 +72,10 @@ const Sidebar = () => {
           <List>
             <ListItem
               sx={{
-                backgroundColor: "#f6f6f6", // Background color
-                marginBottom: "10px", // Margin bottom
-                borderRadius: "15px", // Border radius
+                backgroundColor: "#f6f6f6",
+                marginBottom: "10px",
+                borderRadius: "30px",
+                marginTop: "120px",
               }}
             >
               <ListItemIcon sx={{ minWidth: "35px" }}>
@@ -162,7 +164,6 @@ const Sidebar = () => {
                     },
                   }}
                 >
-                  {" "}
                   <img src="./assets/track.png" alt="tracklogo" />
                   <ListItemText
                     inset

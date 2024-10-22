@@ -319,6 +319,25 @@ const CalendarPage = () => {
                     }}
                   />
                 ))}
+                <img
+                  src="./assets/circlele.png"
+                  alt="circle"
+                  style={{
+                    marginLeft: "5px",
+                    height: "18px",
+                    width: "18px",
+                    marginTop: "7px",
+                  }}
+                />
+                <img
+                  src="./assets/circleri.png"
+                  alt="circleri"
+                  style={{
+                    height: "18px",
+                    width: "18px",
+                    marginTop: "7px",
+                  }}
+                />
               </Box>
             </ListItem>
           </List>
