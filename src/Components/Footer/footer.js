@@ -125,6 +125,25 @@ const styles = {
     color: "#555",
     fontSize: "14px",
   },
+
+  "@media (max-width: 450px)": {
+    footer: {
+      padding: "15px",
+    },
+    links: {
+      flexDirection: "column",
+      gap: "10px",
+      marginBottom: "10px",
+    },
+    socials: {
+      flexDirection: "column",
+      gap: "10px",
+      marginBottom: "10px",
+    },
+    iconLink: {
+      fontSize: "20px",
+    },
+  },
 };
 
 export default Footer;

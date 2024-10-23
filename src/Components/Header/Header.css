@@ -1,5 +1,5 @@
 .navbar-container {
-  margin: 60px 10px 0 10px;
+  margin: 80px 10px 0 10px;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -68,7 +68,7 @@
   font-weight: 600;
   color: var(--css-white);
   position: absolute;
-  top: 140px;
+  top: 110px;
   right: 46px;
   background-color: #242c32;
 
@@ -111,7 +111,7 @@
 }
 @media (max-width: 700px) {
   .navbar-container {
-    margin: 00px 10px 0 10px;
+    margin: 1px 10px 0 10px;
     justify-content: space-between;
     width: 100%;
     padding: 0 10px;

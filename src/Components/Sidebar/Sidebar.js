@@ -80,7 +80,7 @@ const Sidebar = () => {
                 backgroundColor: "#f6f6f6",
                 marginBottom: "10px",
                 borderRadius: "30px",
-                marginTop: "120px",
+                marginTop: "110px",
               }}
             >
               <ListItemIcon sx={{ minWidth: "35px" }}>
