@@ -4,12 +4,25 @@
 }
 
 .sidebar {
-  width: 20%;
+  width: 10%;
   background-color: #ffffff;
 }
 
 .content-container {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 450px) {
+  .layout-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 5%;
+  }
+
+  .content-container {
+    width: 95%;
+  }
 }

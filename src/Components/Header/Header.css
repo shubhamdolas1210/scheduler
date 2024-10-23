@@ -111,6 +111,7 @@
 }
 @media (max-width: 700px) {
   .navbar-container {
+    margin: 00px 10px 0 10px;
     justify-content: space-between;
     width: 100%;
     padding: 0 10px;
@@ -118,14 +119,31 @@
 
   .search-container {
     width: 100%; /* Full width on smaller screens */
+    margin-left: 30px;
+  }
+
+  .search-input {
+    width: 200px;
+    padding: 7px 40px;
+    border: 1px solid #a1a1a1;
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: #312522;
   }
 
   .navbar-right {
     display: none; /* Hide elements like Pro, Premium, and Get App button */
   }
 
-  .backward-menu,
   .tabs-section {
     display: none; /* Hide the back menu and tabs */
+  }
+  .backward-menu {
+    display: flex;
+    align-items: center;
+    font-family: "Raleway", "Open Sans", serif;
+    margin-top: 10px;
+    margin-left: 50px;
+    color: #d8d8d8;
   }
 }

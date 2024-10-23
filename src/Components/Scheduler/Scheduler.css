@@ -25,3 +25,14 @@
 .e-schedule .e-schedule-toolbar .e-tbar-btn .e-tbar-btn-text {
   font-family: "Open Sans", sans-serif;
 }
+@media (max-width: 450px) {
+  .css-1b60hsu-MuiPaper-root {
+    padding: 4px;
+    width: 100%;
+    height: auto;
+
+    box-shadow: none;
+    border-radius: 0px;
+    margin: 10px;
+  }
+}

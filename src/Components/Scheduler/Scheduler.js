@@ -79,6 +79,14 @@ const CalendarPage = () => {
         padding: 1,
         marginLeft: "250px",
         backgroundColor: "#FFFFFF",
+        "@media (max-width: 450px)": {
+          padding: "4px",
+          width: "100%",
+          height: "auto",
+          boxShadow: "none",
+          borderRadius: "0px",
+          margin: "10px",
+        },
       }}
     >
       {/* Header Section */}

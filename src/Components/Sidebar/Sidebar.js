@@ -13,6 +13,7 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery"; // Import useMediaQuery
 
 const theme = createTheme({
   typography: {
@@ -25,6 +26,8 @@ const Sidebar = () => {
   const [collectionOpen, setCollectionOpen] = useState(false);
   const [stationsOpen, setStationsOpen] = useState(false);
   const [performanceOpen, setPerformanceOpen] = useState(false);
+
+  const isSmallScreen = useMediaQuery("(max-width: 450px)");
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -44,25 +47,27 @@ const Sidebar = () => {
 
   return (
     <div>
-      <MenuIcon
-        onClick={toggleDrawer}
-        sx={{
-          // marginTop: "100px",
-          color: "#312522",
-          // marginLeft: "20px",
-          "&:hover": {
-            backgroundColor: "transparent",
-          },
-        }}
-      />
+      {isSmallScreen && ( // Only display MenuIcon on small screens
+        <MenuIcon
+          onClick={toggleDrawer}
+          sx={{
+            color: "#312522",
+            "&:hover": {
+              backgroundColor: "transparent",
+            },
+            marginTop: "120px",
+            marginLeft: "20px",
+          }}
+        />
+      )}
       <Drawer
         anchor="left"
-        open={true}
-        variant="persistent"
+        open={isSmallScreen ? isOpen : true} // Toggle open based on screen size
+        variant={isSmallScreen ? "temporary" : "persistent"} // Change Drawer variant based on screen size
+        onClose={toggleDrawer}
         sx={{
           "& .MuiDrawer-paper": {
             backgroundColor: "#FFFFF",
-
             width: "240px",
             borderRadius: "0px 30px 30px 0px",
           },
